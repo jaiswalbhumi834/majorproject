@@ -34,8 +34,7 @@ const dbUrl = process.env.ATLASDB_URL;
 
 // console.log("DB URL =", JSON.stringify(dbUrl));
 // console.log("Starts with mongodb =", dbUrl.startsWith("mongodb://"));
-console.log("DB URL Found? ", dbUrl ? "YES" : "NO");
-console.log("DB ERROR check karenge");
+
 main()
 .then(() => {
     console.log("connected to db");
@@ -189,7 +188,9 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", {err});
     // res.status(statusCode).send(message);
 });
-
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 app.listen(8080,() => {
     console.log("listening on port 8080");
 } );
