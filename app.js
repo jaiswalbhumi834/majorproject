@@ -32,9 +32,10 @@ const userRouter = require("./routes/user.js");
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 const dbUrl = process.env.ATLASDB_URL;
 
-console.log("DB URL =", JSON.stringify(dbUrl));
-console.log("Starts with mongodb =", dbUrl.startsWith("mongodb://"));
-
+// console.log("DB URL =", JSON.stringify(dbUrl));
+// console.log("Starts with mongodb =", dbUrl.startsWith("mongodb://"));
+console.log("DB URL Found? ", dbUrl ? "YES" : "NO");
+console.log("DB ERROR check karenge");
 main()
 .then(() => {
     console.log("connected to db");
